@@ -1,32 +1,29 @@
 import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import useAuth from "../../Hooks/useAuth";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
+import { SiLinkedin, SiMessenger } from "react-icons/si";
+import { Box, Button, Center, Stack, Text } from "@chakra-ui/react";
 import "./Login.css";
 
 const Login = () => {
-  
   const { signInUsingGoogle } = useAuth();
   const location = useLocation();
-    const history = useHistory();
-    const redirect_uri = location.state?.from || '/';
+  const history = useHistory();
+  const redirect_uri = location.state?.from || "/";
 
-  // Not working showing an error
-  // const handleGoogleLogin = () => {
-  //   signInUsingGoogle()
-  //       .then(result => {
-  //           history.push(redirect_uri);
-  //       })
-  // }
   return (
-    <div className="login__area d-flex align-items-center py-5">
-      <div className="mx-auto">
-        <h2>Please Login</h2>
-
-        <button onClick={signInUsingGoogle} className="btn primary__btn mt-2">
-          Google Sign In
-        </button>
-      </div>
-    </div>
+    <Center className="login" p={8}>
+      <Stack spacing={2} align={"center"} maxW={"md"} w={"full"}>
+        {/* Google */}
+        <Button w={"full"} variant={"outline"} leftIcon={<FcGoogle />}>
+          <Center>
+            <Text onClick={signInUsingGoogle}>Sign in with Google</Text>
+          </Center>
+        </Button>
+      </Stack>
+    </Center>
   );
 };
 

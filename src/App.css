@@ -9,3 +9,10 @@
   font-size: 20px !important;
   font-weight: 600;
 }
+.login {
+  height: 100vh;
+}
+.purchase-btn {
+  background-color: #f56565 !important;
+  color: white !important;
+}

@@ -9,7 +9,6 @@ function Services() {
   return (
     <Container id="services">
       <div className="services__area text-center">
-        <p className="mt-5 ">Destinations List</p>
         <h2 className="mb-5 text-bold">
           We Offer Different Tour Services
           <br /> To make your travel easier.
